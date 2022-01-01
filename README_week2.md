@@ -38,7 +38,4 @@
 k_old / k_new 分別為推薦舊/新客戶的產品中，人氣產品所佔的個數。以這張圖來說，在同樣推薦 0 - 30 個的情況下，人氣產品的推薦數越多，評估分數越高，似乎並沒有發揮到以 title 內容分析產品相關性後所能帶來的推薦效果。
 
 ## 使用工具
-1. 版本管理：Github
-2. 開發環境：Colab
-3. 程式語言：Python
-4. 相關package：matplotlib、datetime、dateutil
+相關 Package, Python, Colab, Github
