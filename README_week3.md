@@ -13,7 +13,7 @@
 
 ## EDA 
 1. 將每個月「新進用戶評論數」和「所有用戶評論數」作圖發現每個月新進用戶佔比極高。
-2. 僅有 3.6% 的商品只被購買一次，大部分商品都被重複購買過。但僅被購買過一次的商品########
+2. 有 41.1% 的商品只被購買一次。最佳人氣的商品共有 8,672 則評價。
 3. 統計每個 reviewerID 共留下過幾筆評論資料。發現 77.5% 左右的用戶只留下過一筆資料。同一用戶最多留下 27 筆評論資料。
 4. 統計過濾掉留下筆數為 n 筆以上時，會剩下多少用戶，發現若取 n = 3 時，用戶只會剩下 6.7% 左右。
 5. 統計同用戶的購買資訊，重複買家購入相同物品且給同評分/重複買家 的 評價筆數 為 18,837/83,561。其中有將近 400 筆資料是同買家對於同商品有不同評分。
@@ -34,24 +34,24 @@
 ## 推薦邏輯
 1. 手刻 cf-user-based。
 2. 手刻 cf-item-based。
-3. 套件 cf-surprise。
-4. 加入 rule-based，選出前一個月的人氣商品，按順序確認沒有重複並推薦 (因為上週做出的結論為完全無法發揮 content-based 的功用，因此本次不考慮使用 content-based 來迭代)
+3. 套件 cf-surprise。(RAM有限，因此訓練資料集只取過去一年)
+4. 加入 rule-based，選出前一個月的人氣商品，按順序確認沒有重複並推薦。 (因為上週做出的結論為完全無法發揮 content-based 的功用，因此本次不考慮使用 content-based 來迭代)
 5. 將 normalized 的評分資料取代原先資料進行分析。
 
 # 評估分數
 #### 無 normalize
-1. cf-user-based:
-2. cf-item-based:
-3. cf-surprise:
-4. cf-user + rule -based:
-5. cf-item + rule -based:
-6. cf-surprise + rule-based:
+1. cf-user-based: 0
+2. cf-item-based: 0
+3. cf-surprise: 0
+4. cf-user + rule -based: 0.153
+5. cf-item + rule -based: 0.149
+6. cf-surprise + rule-based: 0.151
 
 #### normalize
-1. cf-user-based:
-2. cf-item-based:
-3. cf-user + rule -based:
-4. cf-item + rule -based:
+1. cf-user-based: 0
+2. cf-item-based: 0
+3. cf-user + rule -based: 0.153
+4. cf-item + rule -based: 0.153
 ** normalize 不使用 surprise 原因為，還沒有完全通透 surprise 的 演算法，也來不及轉化為套件的輸入格式。
 
 # 討論
